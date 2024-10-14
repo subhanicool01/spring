@@ -10,7 +10,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 //@ComponentScan({"com.bezkoder.spring.datajpa"})
 @EntityScan("com.bezkoder.spring.datajpa.model")
 @EnableJpaRepositories("com.bezkoder.spring.datajpa.repository")
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+@SpringBootApplication()
+//@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class SpringBootDataJpaApplication {
 
 	public static void main(String[] args) {
