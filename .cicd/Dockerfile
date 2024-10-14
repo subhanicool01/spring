@@ -11,7 +11,7 @@ ARG JAR_DEST
 ENV JAR_DEST ${JAR_DEST}
 RUN mkdir -p /opt/service/
 WORKDIR /opt/service
-COPY ["${JAR_SOURCE}", "/opt/service/spring-boot-data-jpa-mysql.jar"]
+COPY ["${JAR_SOURCE}", "/opt/service/spring.jar"]
 RUN chmod 777 /opt/service/
 EXPOSE 9797
-CMD ["java", "-jar", "/opt/service/spring-boot-data-jpa-mysql.jar"]
+CMD ["java", "-jar", "/opt/service/spring.jar"]

@@ -30,7 +30,7 @@ pipeline {
 
     }
     environment{
-        SERVICE_NAME = "spring-boot-data-jpa-mysql"
+        SERVICE_NAME = "spring"
         POM_VERSION = readMavenPom().getVersion()
         POM_PACKAGING = readMavenPom().getPackaging()
         DOCKER_HUB = "docker.io/subhanicool01"
