@@ -108,7 +108,7 @@ pipeline {
             steps {
                 script {
                     imageValidation().call()
-                    Dockerdeploy('dev', '7797').call()
+                    Dockerdeploy('dev', '5752').call()
                 }
             }
         }
@@ -144,7 +144,7 @@ pipeline {
                 }
                 script {
                     imageValidation().call()
-                    Dockerdeploy('Prod', '9797').call()
+                    Dockerdeploy('Prod', '8752').call()
                 }
             }
         }
