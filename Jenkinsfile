@@ -221,7 +221,7 @@ def Dockerdeploy(env_Name, host_Port) {
                 }
                 // docker create a conatainer
                    echo "creating a new-container"
-                   sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.41.221.1 docker run -d -p $host_Port:9797 --name ${env.SERVICE_NAME}-$env_Name ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
+                   sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.41.221.1 docker run -d -p $host_Port:8752 --name ${env.SERVICE_NAME}-$env_Name ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
 
 
             } 
