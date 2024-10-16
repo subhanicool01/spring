@@ -206,22 +206,22 @@ def Dockerdeploy(env_Name, host_Port) {
                 // pulling the container
                 echo "pulling the container"
 
-                sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.135.219.74 docker pull ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
+                sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.134.120.158 docker pull ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
                 try {
                     // stop the container 
                     echo "stopping the container"
-                    sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.135.219.74 docker stop ${env.SERVICE_NAME}-$env_Name"
+                    sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.134.120.158 docker stop ${env.SERVICE_NAME}-$env_Name"
 
                     // remove the container
                     echo "removing the container"
-                    sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.135.219.74 docker rm ${env.SERVICE_NAME}-$env_Name"
+                    sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.134.120.158 docker rm ${env.SERVICE_NAME}-$env_Name"
 
                 } catch(err) {
                     echo "Caught the error: $err"
                 }
                 // docker create a conatainer
                    echo "creating a new-container"
-                   sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.135.219.74 docker run -d -p $host_Port:9797 --name ${env.SERVICE_NAME}-$env_Name ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
+                   sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@34.134.120.158 docker run -d -p $host_Port:9797 --name ${env.SERVICE_NAME}-$env_Name ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
 
 
             } 
