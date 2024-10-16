@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 //@ComponentScan({"com.bezkoder.spring.datajpa"})
+@EnableEurekaClient
 @EntityScan("com.bezkoder.spring.datajpa.model")
 @EnableJpaRepositories("com.bezkoder.spring.datajpa.repository")
 @SpringBootApplication()
